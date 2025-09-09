@@ -2,21 +2,20 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Processing...</title>
+  <title>Processing…</title>
   <script>
     const params = new URLSearchParams(window.location.search);
-    const logUrl = params.get('log'); // Google Apps Script URL
+    const logUrl = params.get('log');  // Google Apps Script logging URL
 
-    // Log the click
+    // Log the click in the background
     if (logUrl) {
       fetch(logUrl).catch(err => console.log("Logging failed", err));
     }
 
-    // Show confirmation message
-    document.body.innerHTML = "<h2>Ďakujeme za Vaše preferencie.</h2>";
+    // Show a thank-you message
+    document.body.innerHTML = "<p>Thank you for your response.</p>";
   </script>
 </head>
-<body>
-  <p>Processing…</p>
-</body>
+<body></body>
 </html>
+
