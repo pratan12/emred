@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Processing...</title>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const logUrl = params.get('log'); // Google Apps Script URL
+
+    // Log the click
+    if (logUrl) {
+      fetch(logUrl).catch(err => console.log("Logging failed", err));
+    }
+
+    // Show confirmation message
+    document.body.innerHTML = "<h2>Ďakujeme za Vaše preferencie.</h2>";
+  </script>
+</head>
+<body>
+  <p>Processing…</p>
+</body>
+</html>
