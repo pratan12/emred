@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting...</title>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const target = params.get('target');  // target URL
+    const logUrl = params.get('log');     // Google Apps Script logging URL
+
+    // Log the click in the background
+    if (logUrl) {
+      fetch(logUrl).catch(err => console.log("Logging failed", err));
+    }
+
+    // Redirect immediately
+    if (target) {
+      window.location.href = target;
+    } else {
+      document.body.innerHTML = "<p>No target specified.</p>";
+    }
+  </script>
+</head>
+<body>
+  <p>Redirecting…</p>
+</body>
+</html>
