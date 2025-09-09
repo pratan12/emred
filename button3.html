@@ -5,36 +5,34 @@
   <title>Processing…</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding-top: 50px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      height: 100vh;
+      margin: 0;
+      padding-top: 80px;
       background-color: #f9f9f9;
-      color: #333;
     }
-    .message {
-      font-size: 22px;
-      font-weight: bold;
-      padding: 20px;
-      border: 2px solid #4CAF50;
-      border-radius: 10px;
-      background-color: #e6ffe6;
-      display: inline-block;
+    .message-box {
+      text-align: center;
+      padding: 40px 60px;
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      font-size: 20px;
+      color: #333333;
     }
   </style>
-</head>
-<body>
-  <div class="message">
-    Ďakujeme za Vaše preferencie
-  </div>
-
   <script>
     const params = new URLSearchParams(window.location.search);
-    const logUrl = params.get('log');  // Google Apps Script logging URL
-
-    // Log the click in the background
-    if (logUrl) {
-      fetch(logUrl).catch(err => console.log("Logging failed", err));
-    }
+    const logUrl = params.get('log');
+    if (logUrl) fetch(logUrl).catch(err => console.log("Logging failed", err));
   </script>
+</head>
+<body>
+  <div class="message-box">
+    Ďakujeme za Vaše preferencie
+  </div>
 </body>
 </html>
