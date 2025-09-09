@@ -1,8 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="cs">
 <head>
   <meta charset="UTF-8">
   <title>Processing…</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 50px;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    .message {
+      font-size: 22px;
+      font-weight: bold;
+      padding: 20px;
+      border: 2px solid #4CAF50;
+      border-radius: 10px;
+      background-color: #e6ffe6;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <div class="message">
+    Ďakujeme za Vaše preferencie
+  </div>
+
   <script>
     const params = new URLSearchParams(window.location.search);
     const logUrl = params.get('log');  // Google Apps Script logging URL
@@ -11,11 +35,6 @@
     if (logUrl) {
       fetch(logUrl).catch(err => console.log("Logging failed", err));
     }
-
-    // Show a thank-you message
-    document.body.innerHTML = "<p>Thank you for your response.</p>";
   </script>
-</head>
-<body></body>
+</body>
 </html>
-
