@@ -1,36 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="cs">
 <head>
   <meta charset="UTF-8">
   <title>Processing…</title>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      background-color: #f5f5f5;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
       margin: 0;
-      background-color: #f9f9f9; /* soft neutral background */
     }
     .message-box {
       text-align: center;
-      padding: 40px 60px;
+      padding: 50px 70px;
       background-color: #ffffff;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      font-size: 20px;
-      color: #333333;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      font-size: 22px;
+      font-weight: 500;
+      color: #1f1f1f;
     }
   </style>
   <script>
     const params = new URLSearchParams(window.location.search);
-    const logUrl = params.get('log');  // Google Apps Script logging URL
-
-    // Log the click in the background
-    if (logUrl) {
-      fetch(logUrl).catch(err => console.log("Logging failed", err));
-    }
+    const logUrl = params.get('log');
+    if (logUrl) fetch(logUrl).catch(err => console.log(err));
   </script>
 </head>
 <body>
