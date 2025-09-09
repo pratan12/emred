@@ -5,12 +5,14 @@
   <title>Processing…</title>
   <script>
     const params = new URLSearchParams(window.location.search);
-    const logUrl = params.get('log');
+    const logUrl = params.get('log');  // Google Apps Script logging URL
 
+    // Log the click in the background
     if (logUrl) {
       fetch(logUrl).catch(err => console.log("Logging failed", err));
     }
 
+    // Show a thank-you message
     document.body.innerHTML = "<p>Thank you for your response.</p>";
   </script>
 </head>
