@@ -5,31 +5,29 @@
   <title>Processing…</title>
   <style>
     body {
-      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      background-color: #f5f5f5;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       display: flex;
-      justify-content: flex-start;
+      justify-content: center;
       align-items: flex-start;
       height: 100vh;
       margin: 0;
       padding-top: 80px;
+      background-color: #f9f9f9;
     }
     .message-box {
       text-align: center;
-      margin: 0 auto;
       padding: 40px 60px;
       background-color: #ffffff;
-      border-radius: 16px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-      font-size: 22px;
-      font-weight: 500;
-      color: #1f1f1f;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      font-size: 20px;
+      color: #333333;
     }
   </style>
   <script>
     const params = new URLSearchParams(window.location.search);
     const logUrl = params.get('log');
-    if (logUrl) fetch(logUrl).catch(err => console.log(err));
+    if (logUrl) fetch(logUrl).catch(err => console.log("Logging failed", err));
   </script>
 </head>
 <body>
